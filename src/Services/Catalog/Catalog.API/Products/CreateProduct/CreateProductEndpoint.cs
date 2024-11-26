@@ -24,7 +24,7 @@ namespace Catalog.API.Products.CreateProduct
                 // convert into `command` from `request`, then send it through mediator to get `result`, and then this `result` will convert into `response`
                 var command = request.Adapt<CreateProductCommand>();
                 var result = await sender.Send(command);
-                var response = request.Adapt(result);
+                var response = result.Adapt<CreateProductResponse>();
 
                 return Results.Created($"/products/{response.Id}", response);
             }).WithName("CreateProduct")
