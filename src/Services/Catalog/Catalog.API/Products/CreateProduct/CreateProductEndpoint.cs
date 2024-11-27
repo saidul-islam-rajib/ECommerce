@@ -2,7 +2,7 @@
 {
     public record CreateProductRequest(
         string Name,
-        List<string> Cateogry,
+        List<string> Category,
         string Description,
         string ImageFile,
         decimal Price);

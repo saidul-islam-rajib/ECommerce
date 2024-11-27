@@ -1,12 +1,9 @@
-﻿using BuildingBlocks.CQRS;
-using Catalog.API.Models;
-
-namespace Catalog.API.Products.CreateProduct
+﻿namespace Catalog.API.Products.CreateProduct
 {
     // represent the data that we need to create
     public record CreateProductCommand(
         string Name,
-        List<string> Cateogry,
+        List<string> Category,
         string Description,
         string ImageFile,
         decimal Price) : ICommand<CreateProductResult>;
@@ -19,7 +16,7 @@ namespace Catalog.API.Products.CreateProduct
             var product = new Product
             {
                 Name = command.Name,
-                Category = command.Cateogry,
+                Category = command.Category,
                 Description = command.Description,
                 ImageFile = command.ImageFile,
                 Price = command.Price,
