@@ -1,3 +1,6 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var assembly = typeof(Program).Assembly;
@@ -23,11 +26,17 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 app.MapCarter();
 app.UseExceptionHandler(options => { });
 
-
+// src link : https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks?tab=readme-ov-file
+app.UseHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
