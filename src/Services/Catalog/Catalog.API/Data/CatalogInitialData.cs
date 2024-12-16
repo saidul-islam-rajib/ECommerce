@@ -23,7 +23,7 @@ namespace Catalog.API.Data
             new Product()
             {
                 Id = new Guid(),
-                Name= "Product Name 7",
+                Name= "Product 1",
                 Category= new List<string>{"Smart Phone"},
                 Description= "Just for testing purpose only 7.",
                 ImageFile= "phone.png",
@@ -32,7 +32,7 @@ namespace Catalog.API.Data
             new Product()
             {
                 Id = new Guid(),
-                Name= "Product Name 7",
+                Name= "Product 2",
                 Category= new List<string>{"Laptop"},
                 Description= "this is all about laptp",
                 ImageFile= "laptop.png",
@@ -41,7 +41,7 @@ namespace Catalog.API.Data
             new Product()
             {
                 Id = new Guid(),
-                Name= "Product Name 7",
+                Name= "Product 3",
                 Category= new List<string>{"Mouse"},
                 Description= "this is all about mouse",
                 ImageFile= "mouse.png",
@@ -50,7 +50,43 @@ namespace Catalog.API.Data
             new Product()
             {
                 Id = new Guid(),
-                Name= "Product Name 7",
+                Name= "Product 4",
+                Category= new List<string>{"Monitor"},
+                Description= "this is all about monitor",
+                ImageFile= "monitor.png",
+                Price= 7
+            },
+            new Product()
+            {
+                Id = new Guid(),
+                Name= "Product 5",
+                Category= new List<string>{"Smart Phone"},
+                Description= "Just for testing purpose only 7.",
+                ImageFile= "phone.png",
+                Price= 7
+            },
+            new Product()
+            {
+                Id = new Guid(),
+                Name= "Product 6",
+                Category= new List<string>{"Laptop"},
+                Description= "this is all about laptp",
+                ImageFile= "laptop.png",
+                Price= 7
+            },
+            new Product()
+            {
+                Id = new Guid(),
+                Name= "Product 7",
+                Category= new List<string>{"Mouse"},
+                Description= "this is all about mouse",
+                ImageFile= "mouse.png",
+                Price= 7
+            },
+            new Product()
+            {
+                Id = new Guid(),
+                Name= "Product 8",
                 Category= new List<string>{"Monitor"},
                 Description= "this is all about monitor",
                 ImageFile= "monitor.png",
