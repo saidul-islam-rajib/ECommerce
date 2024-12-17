@@ -10,7 +10,26 @@ builder.Services.AddMediatR(config =>
     config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
+
+// Add Swagger services
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
+
 var app = builder.Build();
+
+// Enable Swagger middleware and UI
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "E-Shop on Container");
+        options.RoutePrefix = string.Empty;
+    });
+}
+
 
 // Configure the HTTP request pipeline
 app.MapCarter();
