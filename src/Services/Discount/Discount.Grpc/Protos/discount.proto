@@ -1,0 +1,44 @@
+syntax = "proto3"; // which protobug version we are using
+
+option csharp_namespace = "Discount.Grpc"; // generate csharp classes, within the specified namespace
+
+package discount;
+
+// Discount service definitions
+service DiscountProtoService{
+
+	// Discount CRUD operations
+	// rpc: Remote Procedure Call that defines the specified method can be called remotely by client
+
+	rpc GetDiscount(GetDiscountRequest) returns (CouponModel);
+	rpc CreateDiscount(CreateDiscountRequest) returns (CouponModel);
+	rpc UpdateDiscount(UpdateDiscountRequest) returns (CouponModel);
+	rpc DeleteDiscount(DeleteDiscountRequest) returns (CouponModel);
+}
+
+message GetDiscountRequest{
+	string productName = 1;
+}
+
+message CouponModel{
+
+	// Order of the parameters numbered 1, 2, 3, 4
+	int32 id = 1;
+	string productName = 2;
+	string description = 3;
+	int32 amount = 4;
+}
+
+message CreateDiscountRequest{
+	CouponModel coupon = 1;
+}
+message UpdateDiscountRequest{
+	CouponModel coupon = 1;
+}
+message DeleteDiscountRequest{
+	string productName = 1;
+}
+
+message DeleteDiscountResponse{
+	bool success = 1;
+}
