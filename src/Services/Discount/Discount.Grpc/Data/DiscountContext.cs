@@ -23,7 +23,7 @@ namespace Discount.Grpc.Data
                 },
                 new Coupon
                 {
-                    Id = 1,
+                    Id = 2,
                     ProductName = "IPhone X",
                     Description = "IPhone X has great features in it's camera, performance, throughput etc",
                     Amount = 250
