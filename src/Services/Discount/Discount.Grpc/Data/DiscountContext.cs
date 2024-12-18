@@ -10,5 +10,24 @@ namespace Discount.Grpc.Data
         public DiscountContext(DbContextOptions<DiscountContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Coupon>().HasData(
+                new Coupon
+                {
+                    Id = 1,
+                    ProductName = "Samsung A54",
+                    Description = "Samsung A54 has great features in it's camera, performance, throughput etc",
+                    Amount = 150
+                },
+                new Coupon
+                {
+                    Id = 1,
+                    ProductName = "IPhone X",
+                    Description = "IPhone X has great features in it's camera, performance, throughput etc",
+                    Amount = 250
+                });
+        }
     }
 }
