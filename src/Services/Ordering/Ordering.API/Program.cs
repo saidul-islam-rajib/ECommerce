@@ -11,7 +11,25 @@ builder.Services
     .AddInfrastructureServices(builder.Configuration)
     .AddApiServices();
 
+
+// Swagger Services
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
 var app = builder.Build();
+
+// Enable Swagger middleware and UI
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Ordering Microservices");
+        options.RoutePrefix = string.Empty;
+    });
+}
+
 
 
 // ............ CONFIGURE HTTP REQUEST PIPELINE ............
