@@ -3,9 +3,9 @@
 namespace Ordering.Application.Orders.Queries.GetOrdersByName
 {
     public class GetOrdersByNameHandler(IApplicationDbContext dbContext)
-        : IQueryHandler<GetOrdersByName, GetOrdersByNameResult>
+        : IQueryHandler<GetOrdersByNameQuery, GetOrdersByNameResult>
     {
-        public async Task<GetOrdersByNameResult> Handle(GetOrdersByName query, CancellationToken cancellationToken)
+        public async Task<GetOrdersByNameResult> Handle(GetOrdersByNameQuery query, CancellationToken cancellationToken)
         {
             // 1. Get orders by name using dbContext
             var orders = await dbContext.Orders
