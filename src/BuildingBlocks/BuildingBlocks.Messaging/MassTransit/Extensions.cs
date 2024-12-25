@@ -22,8 +22,8 @@ public static class Extensions
             {
                 configurator.Host(new Uri(configuration["MessageBroker:Host"]!), host =>
                 {
-                    host.Username(configuration.["MessageBroker:UserName"]);
-                    host.Password(configuration.["MessageBroker:Password"]);
+                    host.Username(configuration["MessageBroker:UserName"]!);
+                    host.Password(configuration["MessageBroker:Password"]!);
                 });
                 configurator.ConfigureEndpoints(context);
             });
