@@ -9,6 +9,10 @@
       {
         "Path": "Services\\Discount\\Discount.Grpc\\Discount.Grpc.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Services\\Ordering\\Ordering.API\\Ordering.API.csproj",
+        "Action": "Start"
       }
     ]
   }

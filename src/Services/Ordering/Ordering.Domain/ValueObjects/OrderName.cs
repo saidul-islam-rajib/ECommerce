@@ -9,7 +9,7 @@
         {
             // Domain validations
             ArgumentException.ThrowIfNullOrWhiteSpace(value);
-            ArgumentOutOfRangeException.ThrowIfLessThan(value.Length, DefaultLength);
+            //ArgumentOutOfRangeException.ThrowIfLessThan(value.Length, DefaultLength);
 
             return new OrderName(value);
         }
