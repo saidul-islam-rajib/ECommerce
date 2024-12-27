@@ -13,6 +13,4 @@ var app = builder.Build();
 // Register the reverse proxy routes
 app.MapReverseProxy();
 
-app.MapGet("/", () => "Hello World!");
-
 app.Run();
