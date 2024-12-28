@@ -2,16 +2,16 @@
 {
     public interface IBasketService
     {
-        [Get("basket-service/basket/{userName}")]
+        [Get("/basket-service/basket/{userName}")]
         Task<GetBasketResponse> GetBasket(string userName);
 
-        [Post("basket-service/basket")]
+        [Post("/basket-service/basket")]
         Task<StoreBasketResponse> StoreBasket(StoreBasketRequest request);
 
-        [Delete("basket-service/basket/{userName}")]
+        [Delete("/basket-service/basket/{userName}")]
         Task<DeleteBasketResponse> DeleteBasket(string userName);
 
-        [Post("basket-service/basket/checkout")]
+        [Post("/basket-service/basket/checkout")]
         Task<CheckoutBasketResponse> CheckkoutBasket(CheckoutBasketRequest request);
     }
 }
