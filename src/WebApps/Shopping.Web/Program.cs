@@ -9,6 +9,12 @@ builder.Services.AddRefitClient<ICatalogService>()
         client.BaseAddress = new Uri(builder.Configuration["ApiSettings:ApiGatewayAddress"]!);
     });
 
+builder.Services.AddRefitClient<IBasketService>()
+    .ConfigureHttpClient(client =>
+    {
+        client.BaseAddress = new Uri(builder.Configuration["ApiSettings:ApiGatewayAddress"]!);
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
